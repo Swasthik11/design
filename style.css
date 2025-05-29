@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #118e52, #009688);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 50px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 15px 15px 15px 60px;
+    width: 400px;
+    transition: background-color 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.info-card:hover {
+    background-color: #ffffff; 
+}
+
+.icon-wrapper {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s ease;
+    position: relative;
+}
+
+/* Top triangle using ::before on .icon-box */
+.icon-box::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #009688;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+
+.icon-box::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #009688;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+
+.icon-wrapper::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #009688;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+
+.icon-wrapper::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #009688;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.info-card:hover .icon-box::before,
+.info-card:hover .icon-box::after,
+.info-card:hover .icon-wrapper::before,
+.info-card:hover .icon-wrapper::after {
+    opacity: 1;
+}
+
+.info-card:hover .icon-box {
+    transform: rotateY(360deg);
+}
+
+.icon-box img {
+    width: 60%;
+    height: 60%;
+    z-index: 2;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.card-content p {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.info-card:hover .card-content p {
+    color: #00796B; 
+}
+
+.arrow-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.info-card:hover .arrow-btn {
+    background-color: orange;
+    border-color: white;
+    color: white;
+}
