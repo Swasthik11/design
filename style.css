@@ -25,7 +25,7 @@ body {
 }
 
 .info-card:hover {
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 .icon-wrapper {
@@ -149,7 +149,7 @@ body {
 }
 
 .info-card:hover .card-content p {
-    color: #00796B; 
+    color: #00796B;
 }
 
 .arrow-btn {
@@ -174,9 +174,9 @@ body {
 @media (max-width: 768px) {
     .card-container {
         flex-direction: column;
+        align-items: center;
         gap: 30px;
         padding: 15px;
-        align-items: center;
     }
 
     .info-card {
